@@ -123,6 +123,8 @@ print(f2)
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
+Note that in the plot the mean values are presented by diamond signs.
+
 
 ## What is the average daily activity pattern?
 
@@ -132,7 +134,7 @@ Time series plot of the average number of steps taken on 5-min intervals average
 ```r
 mstep <- aggregate(steps ~ interval, dt, mean)
 f3 <- ggplot(data = mstep, aes(x=interval, y=steps)) +
-        geom_line(na.rm = TRUE) +
+        geom_line(na.rm = TRUE, color = "blue") +
         labs(x="5-min intervals", y="Averaged steps over all days recorded", title = "Time series of averaged steps in 5-min intervals") +
         theme(plot.title = element_text(hjust = 0.5))
 print(f3)
@@ -276,6 +278,8 @@ print(f5)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+
+Note that in the plot the mean values are presented by diamond signs.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
